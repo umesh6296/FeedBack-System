@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="footer">#B1D24D</color>
+    <color name="primary_footer_heading_bg">#B1D24D</color>
+    <color name="LinearLayoutHeaderBg">#B1D24D</color>
+    <color name="LinearLayoutFooterBg">#B1D24D</color>
+
+
+    <color name="Primary_footer_heading_bg">#B1D24D</color>
+</resources>

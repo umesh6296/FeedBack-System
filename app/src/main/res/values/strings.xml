@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FeedBack</string>
+    <string-array name="course">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>Python</item>
+        <item>Kotlin</item>
+        <item>Java Script</item>
+        <item>PHP</item>
+    </string-array>
+</resources>
