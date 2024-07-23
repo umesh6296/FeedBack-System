@@ -62,6 +62,7 @@ public class Register extends AppCompatActivity {
                 } else {
                     Intent in = new Intent(this, StudentLogin.class);
                     in.putExtra("name", nam);
+                    in.putExtra("email", em);
                     startActivity(in);
                 }
             }

@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AdminLoogin"
     android:background="@color/black">
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
         android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="5dp"
         android:background="@drawable/ff_farm_tools_equip_borders"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -32,13 +30,17 @@
             android:textStyle="bold|italic"></TextView>
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/ff_farm_tools_equip_borders"
         android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,9 +64,17 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/showBtn"
+        android:id="@+id/showButton"
         android:layout_width="186dp"
         android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="113dp"
+        android:layout_below="@+id/spinneradmin"
         android:background="@drawable/ff_farm_tools_equip_borders"
         android:onClick="insertNext"
         android:text="Show Detail"
@@ -79,12 +89,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.277"></TextView>
 
+
     <ScrollView
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginBottom="7dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
@@ -94,16 +110,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:background="@drawable/ff_farm_tools_equip_borders"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reclerview"
+            <TableLayout
+                android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="5dp"
-                android:background="@drawable/ff_farm_tools_equip_borders" />
+                android:layout_height="250dp"
+                android:stretchColumns="1"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"></TableLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -111,8 +131,15 @@
         android:id="@+id/doneBtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="656dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/ff_farm_tools_equip_borders"
-        android:onClick="insertNext"
         android:text="Done"
         android:textAlignment="center"
         android:textColor="#030BAE"
@@ -126,4 +153,4 @@
         app:layout_constraintVertical_bias="0.994"></TextView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
