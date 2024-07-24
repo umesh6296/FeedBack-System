@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TBL_USER+"(Email int,Name Text not null,Password Text not null,Role Text not null,primary key(Email))");
+        db.execSQL("create table " + TBL_USER+"(Email Text,Name Text not null,Password Text not null,Role Text not null,Mobile Text not null,primary key(Email))");
 
         db.execSQL("CREATE TABLE if not exists " + TBL_FEEDBACK + "(Email Text,Course Text not null,Suggestion text not null,Rating real not null) ");
     }

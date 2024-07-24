@@ -25,8 +25,9 @@ public class UserDBHelper extends DBHelper{
             String name= cursor.getString(1);
             String passw = cursor.getString(2);
             String role = cursor.getString(3);
+            String mobile=cursor.getString(4);
             msg="Row Found";
-            entity = new UserEntity(em,name,passw,role);
+            entity = new UserEntity(em,name,passw,role,mobile);
         }
         UserDTO dto=new UserDTO(true,msg,null,entity);
         return dto;
@@ -39,6 +40,7 @@ public class UserDBHelper extends DBHelper{
         values.put("Name",user.getName());
         values.put("Password",user.getPassword());
         values.put("Role",user.getRole());
+        values.put("Mobile",user.getMobile());
         db.insert("User",null,values);
         db.close();
         return true;
