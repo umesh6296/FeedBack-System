@@ -54,26 +54,11 @@ public class UserDBHelper extends DBHelper{
         cursor.close();
         return exists;
     }
-
-    public boolean checkMobileExists(String mobile) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE mobile=?", new String[]{mobile});
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }
-
-    // Update password
-    public void updatePassword(String mobile, String newPassword) {
+    public void updatePassword(String email, String newPassword) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("password", newPassword);
-        db.update("users", values, "mobile=?", new String[]{mobile});
+        values.put("Password", newPassword);
+        db.update("User", values, "Email=?", new String[]{email});
+        db.close();
     }
-
-
-
-
-
-
 }
