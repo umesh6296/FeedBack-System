@@ -131,7 +131,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPassword" />
+
+                android:inputType="textPassword"
+                app:counterMaxLength="9"
+                android:maxLength="9"
+                />
         </LinearLayout>
 
         <LinearLayout
