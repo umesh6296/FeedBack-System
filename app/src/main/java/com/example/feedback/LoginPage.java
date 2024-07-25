@@ -20,6 +20,7 @@ TextView textView;
         setContentView(R.layout.activity_login_page);
         email=findViewById(R.id.emailId);
         password=findViewById(R.id.password);
+
         LinearLayout linearLayout = findViewById(R.id.lineearlayout);
          textView = findViewById(R.id.msgText);
 
@@ -31,6 +32,8 @@ TextView textView;
             // If text is not empty, show the LinearLayout
             linearLayout.setVisibility(View.VISIBLE);
         }
+
+
 
     }
     public void goToSecondActivity(View view) {

@@ -25,9 +25,9 @@ public class UserDBHelper extends DBHelper{
             String name= cursor.getString(1);
             String passw = cursor.getString(2);
             String role = cursor.getString(3);
-            String mobile=cursor.getString(4);
+
             msg="Row Found";
-            entity = new UserEntity(em,name,passw,role,mobile);
+            entity = new UserEntity(em,name,passw,role);
         }
         UserDTO dto=new UserDTO(true,msg,null,entity);
         return dto;
@@ -40,7 +40,7 @@ public class UserDBHelper extends DBHelper{
         values.put("Name",user.getName());
         values.put("Password",user.getPassword());
         values.put("Role",user.getRole());
-        values.put("Mobile",user.getMobile());
+
         db.insert("User",null,values);
         db.close();
         return true;
@@ -53,6 +53,22 @@ public class UserDBHelper extends DBHelper{
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         return exists;
+    }
+
+    public boolean checkMobileExists(String mobile) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE mobile=?", new String[]{mobile});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    // Update password
+    public void updatePassword(String mobile, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("password", newPassword);
+        db.update("users", values, "mobile=?", new String[]{mobile});
     }
 
 

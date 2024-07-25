@@ -146,51 +146,6 @@
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                app:cardCornerRadius="100dp">
-
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/reset">
-
-                </ImageView>
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:layout_width="143dp"
-                android:layout_height="match_parent"
-                android:text="Mobile No  "
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22dp"
-                android:textStyle="bold|italic"></TextView>
-
-            <EditText
-
-                android:id="@+id/mobile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
 
             <TextView
                 android:layout_width="159dp"

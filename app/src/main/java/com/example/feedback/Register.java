@@ -23,16 +23,21 @@ public class Register extends AppCompatActivity {
         email=findViewById(R.id.emailId);
         password=findViewById(R.id.password);
         name=findViewById(R.id.name);
-        mobile=findViewById(R.id.mobile);
+
         radioGroup=findViewById(R.id.radioGroup);
         rb1=findViewById(R.id.radioButton);
         rb2=findViewById(R.id.radioButton2);
     }
     public void insert(View view) {
         boolean isEmpty = false;
-        if (TextUtils.isEmpty(email.getText().toString())) {
+
+        String emailStr = email.getText().toString();
+        if (TextUtils.isEmpty(emailStr)) {
             isEmpty = true;
             email.setError("Please fill email id");
+        } else if (!emailStr.contains("@") || !emailStr.endsWith(".com")) {
+            isEmpty = true;
+            email.setError("Invalid email format");
         }
         if (TextUtils.isEmpty(password.getText().toString())) {
             isEmpty = true;
@@ -41,15 +46,12 @@ public class Register extends AppCompatActivity {
         if (TextUtils.isEmpty(name.getText().toString())) {
             isEmpty = true;
             name.setError("Please fill name");
-        }if (TextUtils.isEmpty(mobile.getText().toString())) {
-            isEmpty = true;
-            name.setError("Please fill mobile no");
         }
         if (!isEmpty) {
             String em = email.getText().toString();
             String pas = password.getText().toString();
             String nam = name.getText().toString();
-            String mob = mobile.getText().toString();
+
             String ro = rb1.isChecked() ? "A" : "S";
 
             UserDBHelper dbh = new UserDBHelper(this);
@@ -58,7 +60,7 @@ public class Register extends AppCompatActivity {
             if (dbh.checkEmailExists(em)) {
                 Toast.makeText(this, "Email already registered", Toast.LENGTH_LONG).show();
             } else {
-                UserEntity entity = new UserEntity(em, nam, pas, ro,mob);
+                UserEntity entity = new UserEntity(em, nam, pas, ro);
                 dbh.insert(entity);
 
                 if (ro.equals("A")) {

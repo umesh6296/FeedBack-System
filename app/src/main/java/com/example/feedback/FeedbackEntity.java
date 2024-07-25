@@ -10,6 +10,7 @@ public class FeedbackEntity {
         this.suggestion = suggestion;
         this.rating = rating;
     }
+    public FeedbackEntity(){}
 
     public String getEmail() {
         return email;
